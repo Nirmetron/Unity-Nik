@@ -17,26 +17,10 @@ public class POGu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            GetComponent<Renderer>().material.color = Color.yellow;
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            GetComponent<Renderer>().material.color = Color.green;
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GetComponent<Renderer>().material.color = Color.blue;
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log(transform.position.x);
-        }
-        float Hm = Input.GetAxis("Horizontal");
-        float Vm = Input.GetAxis("Vertical");
-        Vector3 V3M = new Vector3(Hm, 0, Vm);
-        rb.AddForce(V3M * MoveSpeed);
+       
+        float Hr = Input.GetAxis("Horizontal");
+        float Vr = Input.GetAxis("Vertical");
+        rb.AddForce(((transform.right * Hr) + (transform.forward * Vr)) * MoveSpeed / Time.deltaTime);
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * Jump);
