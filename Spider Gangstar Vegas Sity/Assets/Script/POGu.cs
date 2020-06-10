@@ -36,7 +36,7 @@ public class POGu : MonoBehaviour
         float Hm = Input.GetAxis("Horizontal");
         float Vm = Input.GetAxis("Vertical");
         Vector3 V3M = new Vector3(Hm, 0, Vm);
-        rb.AddForce(V3M * -MoveSpeed);
+        rb.AddForce(V3M * MoveSpeed);
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * Jump);
