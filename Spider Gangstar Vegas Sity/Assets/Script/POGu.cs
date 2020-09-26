@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 public class POGu : MonoBehaviour
 {
      public int myInt = 5;
-    public float MoveSpeed = 3;
-    public float Jump = 5;
+    public float MoveSpeed = 4;
+    public float Jump = 7;
     private Rigidbody rb;
     public GameObject obj;
       void Start()
